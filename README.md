@@ -41,3 +41,5 @@
 
 выполнит только блок `it` с соответствующим названием.  
 Более подробно про запуск тестов можно посмотреть в документации [Jest](https://jestjs.io/docs/en/cli.html#--testnamepatternregex)
+
+Hello world
