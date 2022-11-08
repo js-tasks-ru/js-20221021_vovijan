@@ -1,5 +1,5 @@
 export default class NotificationMessage {
-  constructor(text, { duration, type } = {}) {
+  constructor(text, { duration = 1000, type = 'success' } = {}) {
     this.text = text;
     this.duration = duration;
     this.type = type;
@@ -26,7 +26,6 @@ export default class NotificationMessage {
 
   render() {
     if (NotificationMessage.allInstances) {
-      console.log(NotificationMessage.allInstances);
       NotificationMessage.allInstances.forEach(instances => instances.remove());
     }
 
