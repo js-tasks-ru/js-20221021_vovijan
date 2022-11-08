@@ -1,5 +1,5 @@
 export default class NotificationMessage {
-  constructor(text, { duration = 1000, type = 'success' } = {}) {
+  constructor(text = '', { duration = 1000, type = 'success' } = {}) {
     this.text = text;
     this.duration = duration;
     this.type = type;
