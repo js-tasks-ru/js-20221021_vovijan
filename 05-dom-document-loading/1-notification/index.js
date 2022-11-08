@@ -12,7 +12,7 @@ export default class NotificationMessage {
 
   getTemplate() {
     return `
-      <div class="notification success" style="--value:${this.duration / 1000}s">
+      <div class="notification ${this.type}" style="--value:${this.duration / 1000}s">
         <div class="timer"></div>
         <div class="inner-wrapper">
           <div class="notification-header">${this.type}</div>
@@ -40,11 +40,6 @@ export default class NotificationMessage {
     if (element) {
       element.innerHTML = this.getTemplate();
       this.element = element.firstElementChild;
-    }
-
-    if (this.type === 'error') {
-      this.element.classList.remove('success');
-      this.element.classList.add('error');
     }
 
     document.body.append(element);
