@@ -5,6 +5,9 @@ export default class NotificationMessage {
     this.type = type;
 
     this.render();
+
+    NotificationMessage.allInstances = [];
+    NotificationMessage.allInstances.push(this);
   }
 
   getTemplate() {
@@ -22,6 +25,11 @@ export default class NotificationMessage {
   }
 
   render() {
+    if (NotificationMessage.allInstances) {
+      console.log(NotificationMessage.allInstances);
+      NotificationMessage.allInstances.forEach(instances => instances.remove());
+    }
+
     const element = document.createElement('div');
     element.innerHTML = this.getTemplate();
     this.element = element.firstElementChild;
