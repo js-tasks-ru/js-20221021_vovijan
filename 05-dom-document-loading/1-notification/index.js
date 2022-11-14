@@ -26,7 +26,7 @@ export default class NotificationMessage {
 
   render() {
     if (NotificationMessage.allInstances) {
-      NotificationMessage.allInstances.forEach(instances => instances.remove());
+      NotificationMessage.allInstances.forEach(instance => instance.remove());
     }
 
     const element = document.createElement('div');
@@ -48,7 +48,9 @@ export default class NotificationMessage {
   }
 
   remove () {
-    this.element.remove();
+    if (this.element) {
+      this.element.remove();
+    }
   }
 
   destroy() {
